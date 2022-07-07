@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .object-container{
+            width: 80%;
+            margin: auto;
+        }
+        .object {
+            width: 100%;
+            display: flex;
+            border: 1px solid brown;
+            margin: 1rem;
+            align-items: center;
+        }
+        .object h3{
+            width: 50%;
+            padding-left: 2rem;
+        }
+        .object p{
+            width: 25%;
+            padding-left: 2rem;
+        }
+
+        a{
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            background-color: white;
+            border: 2px solid brown;
+            border-radius: 2rem;
+            margin: 0 0.5rem;
+            color: brown;
+        }
+
+        a:hover{
+            cursor: pointer;
+            background-color: brown;
+            color: white;
+        }
+
+
+
+        .center{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>Object list</h1>
+</header>
+<div class="object-container">
+    {% for object in objects %}
+        <div class="object">
+            <h3>{{ object.id }} : {{ object.name }}</h3>
+            <p>Quantity : {{ object.quantity }}</p>
+            <a href="{% url 'update' object.id %}">Update</a>
+            <a href="{% url 'delete' object.id %}">Delete</a>
+        </div>
+    {% endfor %}
+</div>
+<div class="center">
+    <a href="{% url 'create'%}">Add +</a>
+</div>
+</body>
+</html>
