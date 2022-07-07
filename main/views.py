@@ -16,6 +16,9 @@ class ListObjectView(ListView):
         data["title"] = "All Item"
         return data
 
+    def get_queryset(self):
+        return super().get_queryset().order_by("-id")
+
 
 list_objects = ListObjectView.as_view()
 
