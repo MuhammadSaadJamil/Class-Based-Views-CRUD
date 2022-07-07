@@ -42,7 +42,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <div class="center">
-            <button type="submit">Add +</button>
+            <button type="submit">{{ button }}</button>
         </div>
     </form>
 {% endblock %}

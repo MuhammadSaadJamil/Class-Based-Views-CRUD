@@ -30,6 +30,7 @@ class AddObject(CreateView):
         data = super().get_context_data(**kwargs)
         data["title"] = "Add Item"
         data["heading"] = "Add Item"
+        data["button"] = "Add +"
         return data
 
 
@@ -46,6 +47,7 @@ class UpdateObject(UpdateView):
         data = super().get_context_data(**kwargs)
         data["title"] = "Update Item"
         data["heading"] = "Update Item"
+        data["button"] = "Update"
         return data
 
 

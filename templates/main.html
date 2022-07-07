@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         * {
             box-sizing: border-box;
@@ -26,7 +28,14 @@
             margin: auto;
             padding: 2rem;
         }
+
+        @media screen and (max-width:900px){
+            .object-container {
+                width: 95%;
+            }
+        }
     </style>
+
     {% block style %}
     {% endblock %}
 </head>
