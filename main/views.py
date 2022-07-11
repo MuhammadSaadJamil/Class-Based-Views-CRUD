@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from .models import Object
@@ -57,7 +56,7 @@ class UpdateObject(UpdateView):
 update_object = UpdateObject.as_view()
 
 
-class DeleteObject(LoginRequiredMixin, DeleteView):
+class DeleteObject(DeleteView):
     model = Object
     success_url = reverse_lazy("list")
     template_name = 'delete.html'
